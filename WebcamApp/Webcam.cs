@@ -3,6 +3,7 @@ using AForge.Video.DirectShow;
 
 using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Forms;
 
@@ -20,6 +21,7 @@ namespace WebcamApp
 		private VideoCaptureDevice SelectedAudioDevice;
 		private int SelectedVideoDeviceIndex = 0;
 		private int SelectedAudioDeviceIndex = 0;
+		private bool TakeScreenshot = false;
 
 		public Webcam()
 		{
@@ -32,7 +34,7 @@ namespace WebcamApp
 			LoadAudioDevices();
 			LoadViewModes();
 			StartVideoDevice();
-			StartAudioDevice();
+			////StartAudioDevice();
 			//StartIpCamera();
 		}
 
@@ -108,8 +110,30 @@ namespace WebcamApp
 			{
 				// Get new frame and display in PictureBox
 				pbViewer.Image = (Bitmap)e.Frame.Clone();
+				if (TakeScreenshot)
+				{
+					try
+					{
+						StopVideoDevice();
+						pbViewer.Image.Save("..\\..\\..\\screenshot.png", ImageFormat.Png);
+						//pbViewer.Image.Save(string.Format("..\\..\\..\\screenshot_{0}.png", DateTime.Now.ToString("O")),
+						//	ImageFormat.Png);
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(ex.ToString());
+					}
+					finally
+					{
+						TakeScreenshot = false;
+						StartVideoDevice();
+					}
+				}
 			}
-			catch { }
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.ToString());
+			}
 		}
 
 		private void StartAudioDevice()
@@ -145,6 +169,7 @@ namespace WebcamApp
 		//}
 
 		#region Page Control Events
+
 		private void lnkDeviceInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			var sb = new StringBuilder("Name: " + cmbVideoDevice.SelectedItem.ToString());
@@ -186,6 +211,12 @@ namespace WebcamApp
 			if (SelectedAudioDevice != null)
 				SelectedAudioDevice.DisplayPropertyPage(this.Handle); // IntPtr.Zero
 		}
-		#endregion
+
+		#endregion Page Control Events
+
+		private void pbViewer_Click(object sender, EventArgs e)
+		{
+			TakeScreenshot = true;
+		}
 	}
 }

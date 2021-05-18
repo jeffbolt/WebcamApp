@@ -56,6 +56,7 @@ namespace WebcamApp
 			this.pbViewer.Size = new System.Drawing.Size(800, 450);
 			this.pbViewer.TabIndex = 0;
 			this.pbViewer.TabStop = false;
+			this.pbViewer.Click += new System.EventHandler(this.pbViewer_Click);
 			// 
 			// cmbVideoDevice
 			// 
@@ -64,7 +65,7 @@ namespace WebcamApp
 			this.cmbVideoDevice.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.cmbVideoDevice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbVideoDevice.FormattingEnabled = true;
-			this.cmbVideoDevice.Location = new System.Drawing.Point(10, 489);
+			this.cmbVideoDevice.Location = new System.Drawing.Point(10, 488);
 			this.cmbVideoDevice.Name = "cmbVideoDevice";
 			this.cmbVideoDevice.Size = new System.Drawing.Size(292, 28);
 			this.cmbVideoDevice.TabIndex = 1;
@@ -75,7 +76,7 @@ namespace WebcamApp
 			this.lblVideoDevice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblVideoDevice.AutoSize = true;
 			this.lblVideoDevice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblVideoDevice.Location = new System.Drawing.Point(9, 466);
+			this.lblVideoDevice.Location = new System.Drawing.Point(10, 466);
 			this.lblVideoDevice.Margin = new System.Windows.Forms.Padding(0);
 			this.lblVideoDevice.Name = "lblVideoDevice";
 			this.lblVideoDevice.Size = new System.Drawing.Size(100, 20);
@@ -116,10 +117,10 @@ namespace WebcamApp
 			// 
 			// lblViwMode
 			// 
-			this.lblViwMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.lblViwMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblViwMode.AutoSize = true;
 			this.lblViwMode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblViwMode.Location = new System.Drawing.Point(686, 466);
+			this.lblViwMode.Location = new System.Drawing.Point(640, 466);
 			this.lblViwMode.Margin = new System.Windows.Forms.Padding(0);
 			this.lblViwMode.Name = "lblViwMode";
 			this.lblViwMode.Size = new System.Drawing.Size(87, 20);
@@ -128,12 +129,12 @@ namespace WebcamApp
 			// 
 			// cmbViewMode
 			// 
-			this.cmbViewMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.cmbViewMode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.cmbViewMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbViewMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.cmbViewMode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbViewMode.FormattingEnabled = true;
-			this.cmbViewMode.Location = new System.Drawing.Point(686, 488);
+			this.cmbViewMode.Location = new System.Drawing.Point(639, 488);
 			this.cmbViewMode.Name = "cmbViewMode";
 			this.cmbViewMode.Size = new System.Drawing.Size(120, 28);
 			this.cmbViewMode.TabIndex = 6;
@@ -144,7 +145,7 @@ namespace WebcamApp
 			this.lblAudioDevice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblAudioDevice.AutoSize = true;
 			this.lblAudioDevice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblAudioDevice.Location = new System.Drawing.Point(319, 466);
+			this.lblAudioDevice.Location = new System.Drawing.Point(323, 466);
 			this.lblAudioDevice.Margin = new System.Windows.Forms.Padding(0);
 			this.lblAudioDevice.Name = "lblAudioDevice";
 			this.lblAudioDevice.Size = new System.Drawing.Size(101, 20);
